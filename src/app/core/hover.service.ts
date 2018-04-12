@@ -40,12 +40,12 @@ export class HoverService {
             if (cardId) {
                 hoverableElement.addEventListener('click', $event => {
                     this.clickOnHoverableElement = $event;
-                    this.hoveredCardSource.next(`<img src="${encodeURI(`assets/images/static/hearthstone/${cardId}.png`)}">`);
+                    this.hoveredCardSource.next(`<img style="width: 300px;" src="${encodeURI(`assets/images/static/hearthstone/${cardId}.png`)}">`);
                     this.openHover($event, true);
                 });
 
                 hoverableElement.addEventListener('mouseenter', $event => {
-                    this.hoveredCardSource.next(`<img src="${encodeURI(`assets/images/static/hearthstone/${cardId}.png`)}">`);
+                    this.hoveredCardSource.next(`<img style="width: 300px;" src="${encodeURI(`assets/images/static/hearthstone/${cardId}.png`)}">`);
                     this.openHover($event);
                 });
 

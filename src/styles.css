@@ -38,18 +38,21 @@
 
 
 .f2kHoverCard.LEGENDARY {
-    color: #F7B220;
+    color: #F39C12;
 }
 
 .f2kHoverCard.RARE {
-    color: #49A1BB;
+    color: #3498DB;
 }
 
 .f2kHoverCard.EPIC {
-    color: #8365C7;
+    color: #6C3483;
 }
 
-.f2kHoverCard.COMMON,
+.f2kHoverCard.COMMON {
+    color: #27AE60;
+}
+
 .f2kHoverCard.BASIC {
     color: darkgreen;
 }
