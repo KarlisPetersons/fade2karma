@@ -14,7 +14,7 @@ export class ArticlesComponent implements OnInit, OnDestroy {
 
     articles: Article[] = [];
     sum = 0;
-    displayedArticles = ['All Articles', 'Announcements', 'Podcasts', 'Highlights', 'Viewpoints', 'Meta Reports', 'Teams', 'Card Reveals'];
+    displayedArticles = ['All Articles', 'Announcements', 'Highlights', 'Viewpoints', 'Meta Reports', 'Card Reveals', 'News', 'Guides'];
     displayedGames = ['All Games', 'Hearthstone', 'Gwent'];
     displayGames = 'All Games';
     displayArticles = 'All Articles';

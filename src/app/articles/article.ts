@@ -9,7 +9,7 @@ export class Article {
     imageURL: string;
     content: string;
     game: 'HS' | 'GWENT';
-    type: 'METAREPORTS' | 'ANNOUNCMENTS' | 'PODCASTS' | 'HIGHLIGHTS' | 'VIEWPOINTS' | 'TEAMS' | 'CARD_REVEALS';
+    type: 'METAREPORTS' | 'ANNOUNCMENTS' | 'HIGHLIGHTS' | 'VIEWPOINTS' | 'CARD_REVEALS' | 'NEWS' | 'GUIDES';
     published: boolean;
     rating: number;
     date: number;
