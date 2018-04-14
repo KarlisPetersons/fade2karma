@@ -2,17 +2,18 @@ import { Inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Subject } from 'rxjs/Subject';
 import { HtmlHovererComponent } from '../html-hoverer/html-hoverer.component';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Injectable()
 export class HoverService {
-    private hoveredCardSource = new Subject<string | void>();
+    private hoveredCardSource = new Subject<SafeHtml | void>();
     private openedWithClick: boolean;
     private clickOnHoverableElement: MouseEvent;
     private htmlHover: HtmlHovererComponent;
 
     hoveredCard = this.hoveredCardSource.asObservable();
 
-    constructor(@Inject(DOCUMENT) private doc: Document) {
+    constructor(@Inject(DOCUMENT) private doc: Document, private sanitizer: DomSanitizer) {
         document.addEventListener('click', $event => this.onDocumentClick($event));
     }
 
@@ -40,12 +41,12 @@ export class HoverService {
             if (cardId) {
                 hoverableElement.addEventListener('click', $event => {
                     this.clickOnHoverableElement = $event;
-                    this.hoveredCardSource.next(`<img style="width: 300px;" src="${encodeURI(`assets/images/static/hearthstone/${cardId}.png`)}">`);
+                    this.hoveredCardSource.next(this.sanitizer.bypassSecurityTrustHtml(`<img style="width: 300px;" src="${encodeURI(`assets/images/static/hearthstone/${cardId}.png`)}">`));
                     this.openHover($event, true);
                 });
 
                 hoverableElement.addEventListener('mouseenter', $event => {
-                    this.hoveredCardSource.next(`<img style="width: 300px;" src="${encodeURI(`assets/images/static/hearthstone/${cardId}.png`)}">`);
+                    this.hoveredCardSource.next(this.sanitizer.bypassSecurityTrustHtml(`<img style="width: 300px;" src="${encodeURI(`assets/images/static/hearthstone/${cardId}.png`)}">`));
                     this.openHover($event);
                 });
 

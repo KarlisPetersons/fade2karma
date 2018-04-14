@@ -2,3 +2,7 @@
     position: fixed;
     z-index: 9999;
 }
+
+:host > div > img {
+    width: 300px;
+}

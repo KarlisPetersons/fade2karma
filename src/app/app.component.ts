@@ -3,6 +3,7 @@ import {NavigationEnd, Router} from '@angular/router';
 import {GoogleAnalyticsEventsService} from './google-analytics-events.service';
 import { HoverService } from './core/hover.service';
 import { HtmlHovererComponent } from './html-hoverer/html-hoverer.component';
+import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
     selector: 'f2kApp',
@@ -13,14 +14,14 @@ import { HtmlHovererComponent } from './html-hoverer/html-hoverer.component';
             <f2kFooter></f2kFooter>
         </div>
 
-        <f2kHtmlHoverer #htmlHover [htmlString]="displayedCard" [height]="400" [width]="300"></f2kHtmlHoverer>
+        <f2kHtmlHoverer #htmlHover [imageUrl]="displayedCard" [height]="400" [width]="300"></f2kHtmlHoverer>
     `,
 })
 export class AppComponent implements AfterViewInit {
 
     @ViewChild('htmlHover') htmlHover: HtmlHovererComponent;
 
-    displayedCard: string | void;
+    displayedCard: SafeHtml | void;
 
     constructor(public router: Router, public googleAnalyticsEventsService: GoogleAnalyticsEventsService, private hoverService: HoverService) {
         hoverService.hoveredCard.subscribe(displayedCard => this.displayedCard = displayedCard);

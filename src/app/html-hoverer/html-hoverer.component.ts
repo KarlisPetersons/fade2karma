@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
     selector: 'f2kHtmlHoverer',
@@ -7,7 +8,7 @@ import { ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@ang
 })
 export class HtmlHovererComponent {
 
-    @Input() htmlString: string | void;
+    @Input() imageUrl: SafeHtml | void;
     @Input() height?: number;
     @Input() width?: number;
 
