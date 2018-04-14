@@ -25,14 +25,14 @@ export class SpoilerService {
     }
 
     toggleSpoiler(el: HTMLSpanElement, clickEl: HTMLSpanElement, initialContent: string): void {
-        if (el.className.indexOf(COLLAPSED_CLASS)) {
+        if (el.className.indexOf(COLLAPSED_CLASS) !== -1) {
             el.className = el.className.replace(COLLAPSED_CLASS, EXPANDED_CLASS);
             el.innerHTML = initialContent;
             clickEl.innerHTML = '[-]';
             this.hoverService.initTextCardHover(el);
             this.copyDeckCodeService.initDeckCodeCopy(el);
         } else {
-            el.className = el.className.indexOf(EXPANDED_CLASS) ? el.className.replace(EXPANDED_CLASS, COLLAPSED_CLASS) : `${el.className} ${COLLAPSED_CLASS}`;
+            el.className = el.className.indexOf(EXPANDED_CLASS) !== -1 ? el.className.replace(EXPANDED_CLASS, COLLAPSED_CLASS) : `${el.className} ${COLLAPSED_CLASS}`;
             el.innerHTML = '';
             clickEl.innerHTML = '[+]';
         }
