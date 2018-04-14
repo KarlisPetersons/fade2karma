@@ -15,8 +15,19 @@ export class SpoilerService {
             const clickEl = document.createElement('span');
 
             const spoilerElement = spoilerElements[i];
+            const index = Array.prototype.indexOf.call(containerElement.children, spoilerElement);
             const content = spoilerElement.innerHTML;
+            const title = containerElement.children[index - 1];
             this.toggleSpoiler(spoilerElement, clickEl, content);
+
+            spoilerElement.className = `${spoilerElement.className} f2k_clickable`;
+
+            if (title) {
+                title.className = `${title.className} f2k_clickable`;
+                title.addEventListener('click', () => {
+                    this.toggleSpoiler(spoilerElement, clickEl, content);
+                });
+            }
 
             clickEl.addEventListener('click', () => {
                 this.toggleSpoiler(spoilerElement, clickEl, content);
