@@ -16,6 +16,7 @@ export class Article {
     editDate: number;
     recommended: Array<Article>;
     similar?: Array<Deck>;
+    url: string;
 
     constructor(jsonData: any) {
         Extend(this, jsonData);

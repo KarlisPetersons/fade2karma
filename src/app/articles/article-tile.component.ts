@@ -41,7 +41,8 @@ export class ArticlesTileComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.url = `/articles/${this.article.id}`;
+        const extraUrl = (<Article>this.article).url ? `_${(<Article>this.article).url.replace(' ', '_').toUpperCase()}` : '';
+        this.url = `/articles/${this.article.id}${extraUrl}`;
 
         if (this.article instanceof Deck) {
             this.heroClass = this.article.heroClass;

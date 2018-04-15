@@ -73,7 +73,8 @@ export class RecommendedTileComponent implements OnInit, OnDestroy {
                 this.url = `/tier_list/${this.teasedItem.title.replace(/ /g, '_').replace(/[:<>;,+*()'$!-.~?/]/g, '').toLowerCase()}_${this.teasedItem.id}`;
             }
         } else {
-            this.url = `/articles/${this.teasedItem.id}`;
+            const extraUrl = (<Article>this.teasedItem).url ? `_${(<Article>this.teasedItem).url.replace(' ', '_').toUpperCase()}` : '';
+            this.url = `/articles/${this.teasedItem.id}${extraUrl}`;
         }
 
         this.width.emit(this.el.nativeElement.clientWidth);

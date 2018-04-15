@@ -28,7 +28,10 @@ export class ArticleComponent implements OnDestroy {
             this.scrolled = 0;
             this.loadingArticles = false;
             this.allArticlesLoaded = false;
-            this.loadArticle(parseInt(this.router.url.slice(this.router.url.lastIndexOf('/') + 1), 10));
+            let idString = this.router.url.slice(this.router.url.lastIndexOf('/') + 1);
+            const index = idString.indexOf('_');
+            idString = index !== -1 ? idString.slice(0, index) : idString;
+            this.loadArticle(parseInt(idString, 10));
         });
 
         this.infiniteScrollSubscription = infiniteScroll.scrollLimitReached.subscribe(() => {
