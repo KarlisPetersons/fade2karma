@@ -11,6 +11,7 @@ import { Author} from './author';
 })
 export class AuthorComponent {
     @Input() author: Author;
+    @Input() player?: String | null;
     constructor() {
     }
 }

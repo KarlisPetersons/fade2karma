@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { Article } from '../articles/article';
 import { TimeTransfer } from '../core/time-transfer';
-import { Deck } from '../decks/deck';
+import { Deck, TopLegendDeck } from '../decks/deck';
 import { Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
@@ -21,11 +21,11 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
     selector: 'f2kRecommendedTile',
     templateUrl: './teased-tile.component.html',
-    styleUrls: ['./teased-tile.component.css']
+    styleUrls: ['../decklistrow/rank-cell.scss', './teased-tile.component.css']
 })
 export class RecommendedTileComponent implements OnInit, OnDestroy {
 
-    @Input() teasedItem: Article | Deck;
+    @Input() teasedItem: Article | Deck | TopLegendDeck;
     @Input() type: 'article' | 'deck';
     @Input() showInfo = true;
     date: string;
@@ -43,11 +43,13 @@ export class RecommendedTileComponent implements OnInit, OnDestroy {
 
     @HostListener('window:resize')
     onResize() {
-        this.cdRef.detectChanges();
-        if (this.image) {
-            const imageWidth = this.type === 'article' ? this.image.nativeElement.clientHeight * 16 / 9 : this.image.nativeElement.clientHeight;
-            this.image.nativeElement.style.width = `${imageWidth}px`;
-            this.textContainer.nativeElement.style.marginLeft = `${imageWidth + 12}px`;
+        if (!('rank' in this.teasedItem)){
+            this.cdRef.detectChanges();
+            if (this.image) {
+                const imageWidth = this.type === 'article' ? this.image.nativeElement.clientHeight * 16 / 9 : this.image.nativeElement.clientHeight;
+                this.image.nativeElement.style.width = `${imageWidth}px`;
+                this.textContainer.nativeElement.style.marginLeft = `${imageWidth + 12}px`;
+            }
         }
     }
 
@@ -108,5 +110,18 @@ export class RecommendedTileComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.subscriptions.forEach(subscription => subscription.unsubscribe());
+    }
+
+    getInfo(): string {
+        // {{teasedItem.player || teasedItem.author.username}} • {{date}}
+        return `${'player' in this.teasedItem ? this.teasedItem.player : this.teasedItem.author.username} • ${this.date}`;
+    }
+
+    hasRank(): boolean {
+        return 'rank' in this.teasedItem;
+    }
+
+    getRank(): number | null {
+        return 'rank' in this.teasedItem ? this.teasedItem.rank : null;
     }
 }

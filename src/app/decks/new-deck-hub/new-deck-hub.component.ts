@@ -15,11 +15,11 @@ import { CopyDeckCodeService } from '../../core/copy-deck-code.service';
 @Component({
     selector: 'f2kNewDeckHub',
     templateUrl: './new-deck-hub.component.html',
-    styleUrls: ['./new-deck-hub.component.css']
+    styleUrls: ['../../decklistrow/rank-cell.scss', './new-deck-hub.component.css']
 })
 export class NewDeckHubComponent implements OnDestroy {
 
-    deck: Deck | TopLegendDeck;
+    deck: (Deck & {rank?: number}) | TopLegendDeck;
     chartData: any;
     leftColumn: Array<{ title: string, cards: Array<Card> }> = [];
     rightColumn: Array<{ title: string, cards: Array<Card> }> = [];
@@ -227,5 +227,9 @@ export class NewDeckHubComponent implements OnDestroy {
     ngOnDestroy() {
         this.routeSubscription.unsubscribe();
         this.subscriptions.forEach(subscription => subscription.unsubscribe());
+    }
+
+    getPlayer(): null | string {
+        return 'player' in this.deck ? this.deck.player : null;
     }
 }

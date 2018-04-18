@@ -1,18 +1,26 @@
-<a *ngIf="author.type === 'STREAMER'" [routerLink]="['/team/' + author.username + '_' + author.id]"></a>
-<!--<div class="tint">-->
-    <!--<img class="img-circle image" src="assets/images/users/{{author.username | lowercase}}.jpg"> &lt;!&ndash;TODO default image&ndash;&gt;-->
-<!--</div>-->
-<div class="author-info">
-    <p *ngIf="author.type !== 'STREAMER'" class="b2">Created by:</p>
-    <h5>{{author.username}}</h5>
+<ng-container *ngIf="!player; else player_display">
+    <a *ngIf="author.type === 'STREAMER'" [routerLink]="['/team/' + author.username + '_' + author.id]"></a>
+    <!--<div class="tint">-->
+        <!--<img class="img-circle image" src="assets/images/users/{{author.username | lowercase}}.jpg"> &lt;!&ndash;TODO default image&ndash;&gt;-->
+    <!--</div>-->
+    <div class="author-info">
+        <p *ngIf="author.type !== 'STREAMER'" class="b2">Created by:</p>
+        <h5>{{author.username}}</h5>
 
-    <div class="text-container">
-        <div *ngIf="author.twitchData">
-            <p class="b2 indicator">Live</p>
-            <div class="point"></div>
-            <p class="b2 game">{{author.game}}</p>
+        <div class="text-container">
+            <div *ngIf="author.twitchData">
+                <p class="b2 indicator">Live</p>
+                <div class="point"></div>
+                <p class="b2 game">{{author.game}}</p>
+            </div>
+
+            <p *ngIf="author.type === 'STREAMER' && !author.twitchData" class="b2">Offline</p>
         </div>
-
-        <p *ngIf="author.type === 'STREAMER' && !author.twitchData" class="b2">Offline</p>
     </div>
-</div>
+</ng-container>
+<ng-template #player_display>
+    <div class="author-info">
+        <p class="b2">Played by:</p>
+        <h5>{{player}}</h5>
+    </div>
+</ng-template>

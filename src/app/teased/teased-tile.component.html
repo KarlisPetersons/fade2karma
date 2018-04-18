@@ -21,11 +21,19 @@ on play button click do {
 
 -->
 <a [routerLink]="[url]" class="overlay"></a>
+<ng-container *ngIf="!hasRank(); else rank_template">
+    <img #imageNode *ngIf="imageSrc" (error)="updateUrl($event)" [src]='imageSrc'>
+</ng-container>
 
-<img #imageNode *ngIf="imageSrc" (error)="updateUrl($event)" [src]='imageSrc'>
-
-<div #textContainerNode class="text-container">
+<div #textContainerNode class="text-container" [ngClass]="{'topRankDeck': hasRank()}">
     <h4 *ngIf="teasedItem.title" class="title">{{teasedItem.title.slice(0, 50)}}</h4>
     <h6 *ngIf="info">{{info}}</h6>
-    <p *ngIf="teasedItem.author" class="info, b2">{{teasedItem.author.username}} • {{date}}</p>
+    <p *ngIf="teasedItem.author" class="info, b2">{{getInfo()}}</p>
 </div>
+
+<ng-template #rank_template>
+    <div class="cell rank-cell">
+        <img src="assets/icons/rank.png" class="icon"/>
+        <h3>{{getRank()}}</h3>
+    </div>
+</ng-template>

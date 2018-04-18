@@ -17,6 +17,10 @@
                         <f2k-social-share [text]="deck.title"></f2k-social-share>
                     </div>
                 </div>
+                <div *ngIf="deck.rank" class="cell rank-cell">
+                    <img src="assets/icons/rank.png" class="icon"/>
+                    <h3>{{deck.rank}}</h3>
+                </div>
             </div>
 
             <div class="social-share">
@@ -95,7 +99,8 @@
 
                     </div>
                     <div class="deck-footer" style="display: block">
-                        <f2kAuthorTile style="display: inline-block" [author]="deck.author"></f2kAuthorTile>
+                        <f2kAuthorTile style="display: inline-block" [author]="deck.author" [player]="getPlayer()"></f2kAuthorTile>
+
 
                         <!--<p>Created by: <bold>{{deck.author.username}}</bold></p>-->
 
