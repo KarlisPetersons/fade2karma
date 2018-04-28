@@ -151,6 +151,35 @@ body {
     width: 250px;
 }
 
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+    display: inline-block;
+}
+
+.article-content h2 {
+    font-size: 26px;
+}
+
+.article-content h3 {
+    font-size: 24px;
+}
+
+.article-content h4 {
+    font-size: 22px;
+}
+
+.article-content h5 {
+    font-size: 20px;
+}
+
+.article-content h6 {
+    font-size: 18px;
+}
+
 .name {
     text-align: center;
 }
