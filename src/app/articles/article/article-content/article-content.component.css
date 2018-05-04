@@ -193,7 +193,7 @@ f2k-rating-box {
 		height:420px;
 	}
     .footer-ad {
-        display: none;
+        display: none !important;
     }
     .recommended {
         float: none;

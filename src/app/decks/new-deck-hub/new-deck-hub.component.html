@@ -64,14 +64,28 @@
                                 <f2kHearthstoneMana *ngIf="chartData" [chartData]="chartData"></f2kHearthstoneMana>
                                 <button *ngIf="deck?.mode === 'CON'" class="btn-copy-deck-code" (click)="copyDeckCode()">{{copyDeckCodeName}}</button>
                             </div>
-                            <!--<f2k-ad class="side-ad" [adStyle]="{'display': 'block'}" [adFormat]="'fluid'" [adLayoutKey]="'-7b-1m-75+i4+5r'" [adSlot]="'7360843877'"></f2k-ad>-->
+
+                            <!--Temporary add for Tayroc-->
+                            <!--<a class="side-ad" style="float: left; width: 380px; height: 380px; margin-bottom: 12px;" target="_blank" href="https://tayroc.refersion.com/c/3eb57c">-->
+                            <a class="side-ad" target="_blank" href="https://tayroc.refersion.com/c/3eb57c">
+                                <img style="width: 100%;" src="assets/sponsor-images/tayroc/TAYROC-TWITCH-bigbanner-27apr18-F2k4.jpg">
+                            </a>
+
+                            <!--<f2k-ad class="side-ad" [adStyle]="{'display': 'inline-block', 'width.px': '300', 'height.px': '250'}" [adLayout]="'in-article'" [adFormat]="'fluid'" [adSlot]="'2783969262'"></f2k-ad>-->
                         </div>
 
                         <div class="phone graph-container">
                             <f2kHearthstoneMana *ngIf="chartData" [chartData]="chartData"></f2kHearthstoneMana>
                             <button *ngIf="deck?.mode === 'CON'" class="btn-copy-deck-code" (click)="copyDeckCode()">{{copyDeckCodeName}}</button>
                         </div>
-                        <!--<f2k-ad class="phone side-ad" [adStyle]="{'display': 'block'}" [adFormat]="'fluid'" [adLayoutKey]="'-7b-1m-75+i4+5r'" [adSlot]="'7360843877'"></f2k-ad>-->
+
+                        <!--Temporary add for Tayroc-->
+                        <!--<a style="float: left; width: 380px; height: 380px; margin-bottom: 12px;" target="_blank" href="https://tayroc.refersion.com/c/3eb57c">-->
+                        <a class="phone side-ad" target="_blank" href="https://tayroc.refersion.com/c/3eb57c">
+                            <img style="width: 100%;" src="assets/sponsor-images/tayroc/TAYROC-TWITCH-bigbanner-27apr18-F2k4.jpg">
+                        </a>
+
+                        <!--<f2k-ad class="phone side-ad" [adStyle]="{'display': 'inline-block', 'width.px': '300', 'height.px': '250'}" [adLayout]="'in-article'" [adFormat]="'fluid'" [adSlot]="'2783969262'"></f2k-ad>-->
 
                         <div #contentContainer class="deck-guide-section" [innerHTML]="CONTENT"></div>
 
@@ -110,7 +124,7 @@
 
                         <div #commentContainer class="article-comments" [ngStyle]="{opacity: showComments ? '1' : '0', height: showComments ? '' : '0'}"></div>
 
-                        <!--<f2k-ad class="footer-ad" [adStyle]="{'display': 'inline-block', 'width.px': '728', 'height.px': '90'}"></f2k-ad>-->
+                        <f2k-ad class="footer-ad" [adStyle]="{'display': 'inline-block', 'width.px': '728', 'height.px': '90'}" [adSlot]="'8528165511'"></f2k-ad>
                     </div>
                 </div>
 
@@ -118,6 +132,13 @@
                     <f2kHearthstoneMana *ngIf="chartData" [chartData]="chartData"></f2kHearthstoneMana>
                     <button *ngIf="deck?.mode === 'CON'" class="btn-copy-deck-code" (click)="copyDeckCode()">{{copyDeckCodeName}}</button>
                     <div class="recommended-container">
+                        <!--Temporary add for Tayroc-->
+                        <a style="width: 360px; height: 360px; margin: 20px 0 8px 0; display: block" target="_blank" href="https://tayroc.refersion.com/c/3eb57c">
+                            <img style="width: 100%;" src="assets/sponsor-images/tayroc/TAYROC-TWITCH-bigbanner-27apr18-F2k4.jpg">
+                        </a>
+
+                        <!--<f2k-ad class="side-ad" [adStyle]="{'display': 'inline-block', 'width.px': '300', 'height.px': '250'}" [adLayout]="'in-article'" [adFormat]="'fluid'" [adSlot]="'2783969262'"></f2k-ad>-->
+
                         <f2kRecommendedContainer *ngIf="deck?.similar?.length > 0" class="recommended-teaser"
                                                  [itemType]="'deck'" [title]="'SIMILAR DECKS'"
                                                  [items]="deck.similar"></f2kRecommendedContainer>
@@ -126,7 +147,6 @@
                                                  [itemType]="'article'" [title]="'YOU MAY ALSO LIKE'"
                                                  [items]="deck.recommended"></f2kRecommendedContainer>
                     </div>
-                    <!--<f2k-ad class="side-ad" [adStyle]="{'display': 'block'}" [adFormat]="'fluid'" [adLayoutKey]="'-7b-1m-75+i4+5r'" [adSlot]="'7360843877'"></f2k-ad>-->
                 </div>
             </div>
             <div class="clearfix"></div>

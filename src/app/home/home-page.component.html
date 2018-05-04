@@ -2,12 +2,17 @@
     <f2kArticlesTile *ngIf="featuredArticles[0]" class="featured" style="float: left" [showDescription]="true" [article]="featuredArticles[0]"></f2kArticlesTile>
 
     <span class="side-container clearfix">
+        <!--Temporary add for Tayroc-->
+        <a class="f2k-visible-lg" style="float: left; width: 380px; height: 380px; margin-bottom: 12px;" target="_blank" href="https://tayroc.refersion.com/c/3eb57c">
+            <img style="width: 100%;" src="assets/sponsor-images/tayroc/TAYROC-TWITCH-bigbanner-27apr18-F2k.jpg">
+        </a>
+
         <f2kTopSpotlightTeaser *ngIf="spotlightDecks.length" [decks]="spotlightDecks"></f2kTopSpotlightTeaser>
 
         <f2kArticlesTile *ngIf="featuredArticles[1]" class="f2k-visible-lg" style="float: right" [showDescription]="true"
-                         [article]="featuredArticles[1]" [ngStyle]="{'margin-bottom.px': tierOne?.length ? 0 : 12}"></f2kArticlesTile>
+                 [article]="featuredArticles[1]" [ngStyle]="{'margin-bottom.px': tierOne?.length ? 0 : 12}"></f2kArticlesTile>
 
-        <!--<f2k-ad [adStyle]="{'display': 'inline-block', 'width.px': '300', 'height.px': '250'}" [adLayout]="'in-article'" [adFormat]="'fluid'" [adSlot]="'2783969262'"></f2k-ad>-->
+        <f2k-ad [adStyle]="{'display': 'inline-block', 'width.px': '300', 'height.px': '250'}" [adLayout]="'in-article'" [adFormat]="'fluid'" [adSlot]="'2783969262'"></f2k-ad>
 
         <f2kTierListComponent *ngIf="tierOne?.length" [type]="'deck'" [title]="'F2K TIER LIST'" [tierOne]="tierOne"></f2kTierListComponent>
 

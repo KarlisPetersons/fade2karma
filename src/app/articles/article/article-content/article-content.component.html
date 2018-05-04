@@ -35,14 +35,21 @@
             </button>
 
             <div #commentContainer class="article-comments" [ngStyle]="{opacity: showComments ? '1' : '0', height: showComments ? '' : '0'}"></div>
-            <!--<f2k-ad class="footer-ad" [adStyle]="{'display': 'inline-block', 'width.px': '728', 'height.px': '90'}" [adSlot]="'4732634932'"></f2k-ad>-->
+            <f2k-ad class="footer-ad" [adStyle]="{'display': 'inline-block', 'width.px': '728', 'height.px': '90'}" [adSlot]="'8528165511'"></f2k-ad>
         </div>
     </div>
 
     <div #recommendedTeaser class="recommended">
         <f2kRecommendedContainer *ngIf="article?.recommended?.length" class="recommended-teaser" [itemType]="'article'" [title]="'YOU MAY ALSO LIKE'"
                                  [items]="article.recommended"></f2kRecommendedContainer>
-        <!--<f2k-ad class="side-ad" [adStyle]="{'display': 'block'}" [adFormat]="'fluid'" [adLayoutKey]="'-7b-1m-75+i4+5r'" [adSlot]="'7199016179'"></f2k-ad>-->
+
+        <!--Temporary add for Tayroc-->
+        <a class="side-ad" style="display: block" target="_blank" href="https://tayroc.refersion.com/c/3eb57c">
+            <img style="width: 100%;" src="assets/sponsor-images/tayroc/TAYROC-TWITCH-bigbanner-27apr18-F2k3.jpg">
+        </a>
+
+        <!--<f2k-ad class="side-ad" [adStyle]="{'display': 'inline-block', 'width.px': '300', 'height.px': '250'}" [adLayout]="'in-article'" [adFormat]="'fluid'" [adSlot]="'2783969262'"></f2k-ad>-->
+
     </div>
     <div class="clearfix"></div>
 </div>
