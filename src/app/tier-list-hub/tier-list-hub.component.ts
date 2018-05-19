@@ -44,7 +44,7 @@ export class TierListHubComponent implements OnInit, OnDestroy {
     getDecks(tier: number, title: string) {
         const deckSubscription = this.tierListHubService.getDecks(this.amount, tier, this.mode, this.isStandard, this.game).subscribe(decks => {
             for (let i = 0, ii = decks.length; i < ii; i++) {
-                decks[i].decks.forEach(deck => deck.dust = DustCalculationService.getCardCost(deck.cards, decks[i].game));
+                decks[i].decks.forEach(deck => deck.cost = deck.cost || DustCalculationService.getCardCost(deck.cards, decks[i].game));
             }
             this.decksList[this.active][tier - 1] = { title: title, list: decks };
         });

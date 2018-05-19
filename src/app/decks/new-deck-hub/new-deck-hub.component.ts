@@ -183,7 +183,7 @@ export class NewDeckHubComponent implements OnDestroy {
                 },
                 {
                     label: this.deck.game === 'HS' ? 'Dust Cost' : 'Scrap',
-                    value: DustCalculationService.getCardCost(this.activeDeck.cards, this.deck.game),
+                    value: this.activeDeck.cost || DustCalculationService.getCardCost(this.activeDeck.cards, this.deck.game),
                     image: this.deck.game === 'HS' ? 'assets/icons/icon-dust.png' : 'assets/icons/icon-scrap.png',
                     imageStyle: { 'padding-bottom': '5px' }
                 }

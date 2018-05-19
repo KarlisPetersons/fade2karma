@@ -62,7 +62,7 @@ export class DeckObj {
     isStandard: boolean;
     heroClass: HeroClasses;
 
-    dust?: number;
+    cost?: number;
 }
 
 export class Deck {

@@ -66,7 +66,7 @@ export class TopSpotlightComponent implements OnInit, OnDestroy {
                 this.totalPages = Math.ceil(decksArr[1] / this.amount);
             }
             for (let i = 0, ii = decks.length; i < ii; i++) {
-                decks[i].deck.dust = DustCalculationService.getCardCost(decks[i].deck.cards, decks[i].game);
+                decks[i].deck.cost = decks[i].deck.cost || DustCalculationService.getCardCost(decks[i].deck.cards, decks[i].game);
             }
             this.decks = decks;
             if (this.sortBy !== 'none') {
