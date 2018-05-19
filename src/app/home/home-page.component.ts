@@ -40,7 +40,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
     setFeatured(): void {
         const featuredSubscription = this.http.get<Array<Article | Deck>>(`${BASE_URL}/api/articles/featured`).subscribe(articles => {
-            this.featuredArticles = articles.map((model: any) => model.cards ? new Deck(model) : new Article(model));
+            this.featuredArticles = articles.map((model: any) => model.decks || model.deck ? new Deck(model) : new Article(model));
             this.featuredArticlesLoaded = true;
             this.setFeaturedAndArticles();
         });
