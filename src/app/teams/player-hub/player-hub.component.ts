@@ -42,7 +42,7 @@ export class PlayerHubComponent implements OnDestroy, OnDestroy {
             }
             if (this.player.twitchData) {
                 this.twitchStreamUrl = this.sanitizer.bypassSecurityTrustResourceUrl(`https://player.twitch.tv/?channel=${this.player.twitch}`);
-                this.twitchChatUrl = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.twitch.tv/${this.player.twitch}/chat`);
+                this.twitchChatUrl = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.twitch.tv/embed/${this.player.twitch}/chat`);
             }
         }));
     }
