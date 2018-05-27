@@ -1,4 +1,4 @@
-﻿import { Component, Input } from '@angular/core';
+﻿import { Component, Input, OnInit } from '@angular/core';
 import { Author } from '../../articles/article/author/author';
 
 @Component({
@@ -6,6 +6,12 @@ import { Author } from '../../articles/article/author/author';
     templateUrl: './player-tile.component.html',
     styleUrls: ['./player-tile.component.css']
 })
-export class PlayerInstanceComponent {
+export class PlayerInstanceComponent implements OnInit{
+
     @Input() user: Author;
+    url = '';
+
+    ngOnInit(): void {
+        this.url = `${this.user.fullName.replace(' ', '_')}_${this.user.username}_${this.user.id}`;
+    }
 }

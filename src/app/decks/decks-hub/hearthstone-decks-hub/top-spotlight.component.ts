@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TierListHubService } from '../../../tier-list-hub/tier-list-hub.service';
 import { Deck, Games, HeroClasses, HeroClassesArr, TopLegendDeck } from '../../deck';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { DustCalculationService } from '../../../core/dust-calculation.service';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -64,9 +63,6 @@ export class TopSpotlightComponent implements OnInit, OnDestroy {
             const decks = decksArr[0];
             if (decksArr[1]) {
                 this.totalPages = Math.ceil(decksArr[1] / this.amount);
-            }
-            for (let i = 0, ii = decks.length; i < ii; i++) {
-                decks[i].deck.cost = decks[i].deck.cost || DustCalculationService.getCardCost(decks[i].deck.cards, decks[i].game);
             }
             this.decks = decks;
             if (this.sortBy !== 'none') {

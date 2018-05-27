@@ -61,11 +61,11 @@ export class DeckObj {
     mode: Modes;
     isStandard: boolean;
     heroClass: HeroClasses;
-
     cost?: number;
 }
 
 export class Deck {
+    cost?: number;
     id: number;
     authorID: number;
     author: Author;
@@ -82,7 +82,7 @@ export class Deck {
     editDate: number;
     tier: number;
     code: any;
-    decks: Array<DeckObj>;
+    decks?: Array<DeckObj>;
     difficulty: Difficulty;
     recommended: Array<Article>;
     similar: Array<Deck>;

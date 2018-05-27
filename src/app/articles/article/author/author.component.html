@@ -1,5 +1,5 @@
 <ng-container *ngIf="!player; else player_display">
-    <a *ngIf="author.type === 'STREAMER'" [routerLink]="['/team/' + author.username + '_' + author.id]"></a>
+    <a *ngIf="author.type === 'STREAMER'" [routerLink]="url"></a>
     <!--<div class="tint">-->
         <!--<img class="img-circle image" src="assets/images/users/{{author.username | lowercase}}.jpg"> &lt;!&ndash;TODO default image&ndash;&gt;-->
     <!--</div>-->

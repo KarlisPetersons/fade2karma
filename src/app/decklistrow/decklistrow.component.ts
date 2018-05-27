@@ -29,7 +29,7 @@ export class DeckListRowComponent implements OnInit {
             this.displayDate = TimeTransfer.getTime(this.deck.editDate || this.deck.date);
         }
         if (this.displayedProperties.indexOf('resource') !== -1) {
-            this.dustCost = ('deck' in this.deck ? this.deck.deck : this.deck.decks[0]).cost;
+            this.dustCost = ('deck' in this.deck ? this.deck.deck : 'decks' in this.deck ? this.deck.decks[0] : this.deck).cost;
         }
         this.class = `clearfix${this.lgCollapsed ? ' lg-collapsed' : ''}${this.even ? ' even' : this.odd ? ' odd' : ''}`;
     }

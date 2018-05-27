@@ -1,6 +1,6 @@
 import {
     Component,
-    Input,
+    Input, OnInit
 } from '@angular/core';
 import { Author} from './author';
 
@@ -9,9 +9,14 @@ import { Author} from './author';
     templateUrl: './author.component.html',
     styleUrls: ['./author.component.css']
 })
-export class AuthorComponent {
+export class AuthorComponent implements OnInit {
+
     @Input() author: Author;
     @Input() player?: String | null;
-    constructor() {
+
+    url = '';
+
+    ngOnInit(): void {
+        this.url = `/team/${this.author.fullName.replace(' ', '_')}_${this.author.username}_${this.author.id}`;
     }
 }

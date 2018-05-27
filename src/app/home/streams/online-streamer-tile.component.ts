@@ -16,6 +16,7 @@ export class OnlineStreamerTileComponent implements OnChanges {
     marginRight: number;
     marginLeft: number;
     spaceBetweenTiles = 10;
+    url = '';
 
     @HostListener('transitionend')
     transitioned() {
@@ -38,6 +39,11 @@ export class OnlineStreamerTileComponent implements OnChanges {
     ngOnChanges(changes: SimpleChanges) {
         this.setMargins();
         this.setPostition();
+
+        const streamer = changes.streamer;
+        if (streamer && (streamer.currentValue && streamer.currentValue.id) !== (streamer.previousValue && streamer.previousValue.id)) {
+            this.url = `/team/${this.streamer.fullName.replace(' ', '_')}_${this.streamer.username}_${this.streamer.id}`;
+        }
     }
 
     setMargins() {
