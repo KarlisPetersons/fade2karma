@@ -43,6 +43,18 @@ export class SponsorHubComponent implements OnInit {
             }]
         }));
 
+        this.sponsors.push(new Sponsor({
+            imageURL: 'assets/sponsor-images/tayroc.jpeg',
+            link: 'https://tayroc.refersion.com/c/3eb57c',
+            links: [{
+                url: 'https://www.facebook.com/OfficialTayroc/',
+                icon: 'assets/icons/facebook.svg'
+            }, {
+                url: 'https://twitter.com/tayrocwatches',
+                icon: 'assets/icons/twitter.svg'
+            }]
+        }));
+
         // this.sponsors.push(new Sponsor({
         //     imageURL: 'assets/sponsor-images/aftershockz.png',
         //     link: 'https://aftershokz.com',
