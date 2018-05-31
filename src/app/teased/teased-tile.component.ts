@@ -43,7 +43,7 @@ export class RecommendedTileComponent implements OnInit, OnDestroy {
 
     @HostListener('window:resize')
     onResize() {
-        if (!('rank' in this.teasedItem)){
+        if (!('rank' in this.teasedItem)) {
             this.cdRef.detectChanges();
             if (this.image) {
                 const imageWidth = this.type === 'article' ? this.image.nativeElement.clientHeight * 16 / 9 : this.image.nativeElement.clientHeight;

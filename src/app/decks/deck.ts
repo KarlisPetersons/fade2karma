@@ -26,7 +26,7 @@ export type HeroClasses =
     | 'SHAMAN'
     | 'ROGUE';
 export type Modes = 'CON' | 'ARENA' | 'BRAWL';
-export type Games = 'HS' | 'GWENT' | 'UNDEFINED';
+export type Games = 'HS' | 'GWENT' | 'MAGIC' | 'FORTNITE' | 'VARIETY' | 'UNDEFINED' | 'Other';
 export type GwentLeaderName =
     'unseen-elder'
     | 'eredin'

@@ -1,6 +1,6 @@
 import { Author } from './article/author/author';
 import { Extend } from '../core/globals';
-import { Deck } from '../decks/deck';
+import { Deck, Games } from '../decks/deck';
 
 export class Article {
     id: number;
@@ -8,7 +8,7 @@ export class Article {
     title: string;
     imageURL: string;
     content: string;
-    game: 'HS' | 'GWENT';
+    game: Games;
     type: 'METAREPORTS' | 'ANNOUNCMENTS' | 'HIGHLIGHTS' | 'VIEWPOINTS' | 'CARD_REVEALS' | 'NEWS' | 'GUIDES';
     published: boolean;
     rating: number;

@@ -19,7 +19,11 @@ export class TeamsComponent implements OnInit, OnDestroy {
     displayedGames: Array<{ outSideName: string, insideName: string }> = [
         { outSideName: 'All Games', insideName: 'ALL' },
         { outSideName: 'Hearthstone', insideName: 'HS' },
-        { outSideName: 'Gwent', insideName: 'GWENT' }
+        { outSideName: 'Gwent', insideName: 'GWENT' },
+        { outSideName: 'Magic', insideName: 'MAGIC' },
+        { outSideName: 'Fortnite', insideName: 'FORTNITE' },
+        { outSideName: 'Variety', insideName: 'VARIETY' },
+        { outSideName: 'Other Games', insideName: 'OTHER' }
     ];
     displayGames: { outSideName: string, insideName: string } = { outSideName: 'All Games', insideName: 'ALL' };
     gamesOpen = false;
