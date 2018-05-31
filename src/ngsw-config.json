@@ -25,6 +25,9 @@
             "resources": {
                 "files": [
                     "/assets/**/*.{js,html,css,png,jpg,gif}"
+                ],
+                "urls": [
+                    "https://i.imgur.com/**"
                 ]
             }
         }
