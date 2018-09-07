@@ -28,32 +28,32 @@ export class SponsorHubComponent implements OnInit {
             }]
         }));
 
-        this.sponsors.push(new Sponsor({
-            imageURL: 'assets/sponsor-images/ample.png',
-            link: 'https://www.amplemeal.com/',
-            links: [{
-                url: 'https://www.facebook.com/amplemeal/',
-                icon: 'assets/icons/facebook.svg'
-            }, {
-                url: 'https://twitter.com/amplemeal',
-                icon: 'assets/icons/twitter.svg'
-            }, {
-                url: 'https://www.youtube.com/channel/UCARyuqkXBF6aOoxyHcsD-mA',
-                icon: 'assets/icons/youtube.svg'
-            }]
-        }));
+        // this.sponsors.push(new Sponsor({
+        //     imageURL: 'assets/sponsor-images/ample.png',
+        //     link: 'https://www.amplemeal.com/',
+        //     links: [{
+        //         url: 'https://www.facebook.com/amplemeal/',
+        //         icon: 'assets/icons/facebook.svg'
+        //     }, {
+        //         url: 'https://twitter.com/amplemeal',
+        //         icon: 'assets/icons/twitter.svg'
+        //     }, {
+        //         url: 'https://www.youtube.com/channel/UCARyuqkXBF6aOoxyHcsD-mA',
+        //         icon: 'assets/icons/youtube.svg'
+        //     }]
+        // }));
 
-        this.sponsors.push(new Sponsor({
-            imageURL: 'assets/sponsor-images/tayroc.jpeg',
-            link: 'https://tayroc.refersion.com/c/3eb57c',
-            links: [{
-                url: 'https://www.facebook.com/OfficialTayroc/',
-                icon: 'assets/icons/facebook.svg'
-            }, {
-                url: 'https://twitter.com/tayrocwatches',
-                icon: 'assets/icons/twitter.svg'
-            }]
-        }));
+        // this.sponsors.push(new Sponsor({
+        //     imageURL: 'assets/sponsor-images/tayroc.jpeg',
+        //     link: 'https://tayroc.refersion.com/c/3eb57c',
+        //     links: [{
+        //         url: 'https://www.facebook.com/OfficialTayroc/',
+        //         icon: 'assets/icons/facebook.svg'
+        //     }, {
+        //         url: 'https://twitter.com/tayrocwatches',
+        //         icon: 'assets/icons/twitter.svg'
+        //     }]
+        // }));
 
         // this.sponsors.push(new Sponsor({
         //     imageURL: 'assets/sponsor-images/aftershockz.png',
