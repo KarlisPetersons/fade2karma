@@ -28,6 +28,15 @@ export class SponsorHubComponent implements OnInit {
             }]
         }));
 
+        this.sponsors.push(new Sponsor({
+            imageURL: 'assets/sponsor-images/quest-mode.png',
+            link: 'https://gather.operaevent.co/',
+            links: [{
+                url: 'https://twitter.com/operaeventco',
+                icon: 'assets/icons/twitter.svg'
+            }]
+        }));
+
         // this.sponsors.push(new Sponsor({
         //     imageURL: 'assets/sponsor-images/ample.png',
         //     link: 'https://www.amplemeal.com/',
